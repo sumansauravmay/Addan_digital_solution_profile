@@ -4,13 +4,12 @@ const userSchema = mongoose.Schema({
   email: { type: String, required: true },
   name: { type: String, required: true },
   password: { type: String, required: true },
-  
+
   photo: { type: String },
   pastExperience: { type: String },
   skillSets: { type: String },
- education: { type: String },
+  education: { type: String }
 });
 
 const UserModel = mongoose.model("users", userSchema);
 module.exports = { UserModel };
-
