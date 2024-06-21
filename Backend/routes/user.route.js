@@ -24,11 +24,11 @@ userRouter.post("/register", async (req, res) => {
 });
 
 userRouter.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+  const { phone, password } = req.body;
   try {
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.findOne({ phone });
     if (!user) {
-      return res.status(401).send({ msg: "Wrong Email!" });
+      return res.status(401).send({ msg: "Wrong Phone!" });
     }
 
     const isPassword = await bcrypt.compare(password, user.password);
@@ -37,7 +37,7 @@ userRouter.post("/login", async (req, res) => {
     }
 
     const token = jwt.sign(
-      { id: user._id, email: user.email },
+      { id: user._id, phone: user.phone },
       "your_secret_key",
       { expiresIn: "1h" }
     );
