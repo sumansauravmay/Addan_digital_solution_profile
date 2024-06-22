@@ -5,10 +5,10 @@ const userSchema = mongoose.Schema({
   name: { type: String, required: true },
   password: { type: String, required: true },
 
-  photo: { type: String },
-  pastExperience: { type: String },
-  skillSets: { type: String },
-  education: { type: String }
+  photo: { type: String, default: "NA" },
+  pastExperience: { type: String, default: "NA" },
+  skillSets: { type: String, default: "NA" },
+  education: { type: String, default: "NA" }
 });
 
 const UserModel = mongoose.model("users", userSchema);
