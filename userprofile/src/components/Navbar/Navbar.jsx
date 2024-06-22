@@ -15,22 +15,21 @@ const Navbar = () => {
     <Flex gap="2" mt={5} w={"70%"} ml={"250px"}>
       <Box p="2">
         <Link to="/">
-        <GoHomeFill size="40px" />
-        <p>Home</p>
+          <GoHomeFill size="40px" />
+          <p>Home</p>
         </Link>
       </Box>
       <Spacer />
       <ButtonGroup gap="5">
         <Link to="/profile">
-        <Button colorScheme="teal">Profile</Button>
+          <Button colorScheme="teal">Profile</Button>
         </Link>
         <Link to="/register">
-        <Button colorScheme="teal">Sign Up</Button>
+          <Button colorScheme="teal">Sign Up</Button>
         </Link>
         <Link to="/">
-        <Button colorScheme="teal">Log in</Button>
+          <Button colorScheme="teal">Log in</Button>
         </Link>
-       
       </ButtonGroup>
     </Flex>
   );
