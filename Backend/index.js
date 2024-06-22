@@ -8,11 +8,21 @@ const cors = require("cors");
 
 app = express();
 
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+// app.use(
+//   cors({
+//     origin: "*",
+//   })
+// );
+
+
+app.use(cors({
+  origin: 'https://addan-digital-solution-profile-1.onrender.com', // replace with your web app's origin
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
+
+
+
 
 app.use(express.json());
 
