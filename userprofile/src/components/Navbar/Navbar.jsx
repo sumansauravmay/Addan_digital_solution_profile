@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <Flex gap="2" mt={5} w={"70%"} ml={"250px"}>
-      <Box p="2">
+      <Box>
         <Link to="/">
           <GoHomeFill size="40px" />
           <p>Home</p>
