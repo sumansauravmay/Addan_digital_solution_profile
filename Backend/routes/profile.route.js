@@ -7,10 +7,11 @@ const profileRouter = express.Router();
 
 
 profileRouter.get('/profile', authenticate, async (req, res) => {
+
   try {
-    const user = await UserModel.findById(req.user._id).select('-password');
+    const user = await UserModel.findById( req.userId).select('-password');
     console.log("user", user)
-    // res.json(user);
+     res.json(user);
   } catch (error) {
     console.log(error);
     res.status(500).send('Server error');
