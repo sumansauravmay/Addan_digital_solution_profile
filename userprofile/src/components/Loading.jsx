@@ -1,14 +1,9 @@
 import React from "react";
 import {
-    Input,
-    InputRightElement,
-    InputLeftElement,
-    InputGroup,
     Stack,
     Button,
     Box,
     Skeleton,
-    Text,
   } from "@chakra-ui/react";
 
 

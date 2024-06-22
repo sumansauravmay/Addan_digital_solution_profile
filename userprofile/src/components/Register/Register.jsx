@@ -40,7 +40,7 @@ const Register = () => {
     password: password,
     repassword: repassword,
   };
- 
+
   const handleSubmit = () => {
     // e.preventDefault();
 
@@ -54,6 +54,15 @@ const Register = () => {
       toast({
         title: "Registration Failed!",
         description: "One or more input field is empty!",
+        status: "error",
+        duration: 9000,
+        position: "top",
+        isClosable: true,
+      });
+    } else if (password !== repassword) {
+      toast({
+        title: "Registration Failed!",
+        description: "Password doesn't match",
         status: "error",
         duration: 9000,
         position: "top",
@@ -75,9 +84,11 @@ const Register = () => {
             duration: 9000,
             isClosable: true,
           });
-          navigate("/");
-        });
+          navigate("/")
+        })
+        .catch((err)=>console.log(err))
     }
+    
   };
 
   return (
@@ -158,7 +169,7 @@ const Register = () => {
             value={repassword}
             onChange={(e) => setRepassword(e.target.value)}
             pr="4.5rem"
-            type={show ? "text" : "password"}
+            type={show2 ? "text" : "password"}
             placeholder="Retype password"
           />
           <InputRightElement width="4.5rem">
@@ -175,7 +186,7 @@ const Register = () => {
           size="lg"
           onClick={handleSubmit}
         >
-          Button
+          Sign Up
         </Button>
 
         <Flex gap={5}>

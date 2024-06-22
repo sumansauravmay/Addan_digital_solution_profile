@@ -2,7 +2,6 @@ import React from "react";
 import {
   Stack,
   Button,
-  ButtonGroup,
   Heading,
   Image,
   Text,
@@ -10,7 +9,7 @@ import {
   Card,
   Divider,
   CardFooter,
-  Flex,
+  Flex
 } from "@chakra-ui/react";
 
 const Profile = () => {

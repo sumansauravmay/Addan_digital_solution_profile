@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { FcBusinessman } from "react-icons/fc";
+
 import {
   Input,
   InputRightElement,
@@ -8,13 +9,15 @@ import {
   InputGroup,
   Stack,
   Button,
-  Heading,
+  Heading,Flex, Text
 } from "@chakra-ui/react";
 import { PhoneIcon, ViewIcon } from "@chakra-ui/icons";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+    const navigate=useNavigate();
   const toast = useToast();
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
@@ -57,6 +60,7 @@ const Login = () => {
 
   const checktoken = (token) => {
     if (token) {
+        localStorage.setItem("token", JSON.stringify(token));
       toast({
         title: "Congratulations!",
         description: "Login Successful!",
@@ -65,6 +69,7 @@ const Login = () => {
         duration: 9000,
         isClosable: true,
       });
+      navigate("/profile")
     }
   };
 
@@ -138,8 +143,19 @@ const Login = () => {
           colorScheme="teal"
           size="lg"
         >
-          Button
+          Login
         </Button>
+
+
+        <Flex gap={5}>
+          <Text fontSize={"xl"}>Don't have an account: </Text>
+          <Link to="/register">
+            <Text color={"blue.700"} fontSize={"xl"}>
+              Register
+            </Text>
+          </Link>
+        </Flex>
+
       </Stack>
     </div>
   );

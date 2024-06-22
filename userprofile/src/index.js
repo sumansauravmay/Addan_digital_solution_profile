@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import { ChakraProvider } from '@chakra-ui/react'
+// import "bootstrap/dist/css/bootstrap.min.css";
 import reportWebVitals from './reportWebVitals';
 
 
