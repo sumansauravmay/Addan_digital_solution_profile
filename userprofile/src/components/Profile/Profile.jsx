@@ -14,22 +14,25 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import Loading from "../Loading";
 
 const Profile = () => {
   const [user, setUser] = useState({});
-  console.log("user", user);
+  const [loading, setLoading] = useState(false);
   const toast = useToast();
   const navigate = useNavigate();
   const token = JSON.parse(localStorage.getItem("token")) || "";
   console.log("token", token);
 
   const getData = () => {
+    setLoading(true);
     if (token) {
       return axios
         .get(`https://addan-digital-solution-profile-1.onrender.com/profile`, {
           headers: { Authorization: `${token}` },
         })
         .then((res) => {
+            setLoading(false);
           console.log("data", res.data);
           setUser(res.data);
         })
@@ -62,6 +65,52 @@ const Profile = () => {
     getData();
   }, []);
 
+  const handleLogout = () => {
+    setLoading(true);
+    localStorage.removeItem("token");
+    setLoading(false);
+    navigate("/");
+  };
+
+  const handleDelete = (id) => {
+    setLoading(true);
+    axios
+      .delete(
+        `https://addan-digital-solution-profile-1.onrender.com/user/delete/${id}`
+      )
+      .then((res) => {
+        setLoading(false);
+        toast({
+          title: "Account Deleted",
+          description: "please register now!",
+          status: "success",
+          duration: 9000,
+          position: "top",
+          isClosable: true,
+        });
+        localStorage.removeItem("token");
+        navigate("/register");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast({
+          title: "Deleted Action Failed!",
+          description: "Can not be deleted!",
+          status: "error",
+          duration: 9000,
+          position: "top",
+          isClosable: true,
+        });
+      });
+  };
+
+if(loading){
+    return <Loading/>
+}
+
+
+
+
   return (
     <Card maxW="70%" m="50px auto auto auto">
       <CardBody m="6px auto auto 300px">
@@ -86,13 +135,17 @@ const Profile = () => {
       <Divider />
       <CardFooter>
         <Flex gap="5" ml="300px">
-          <Button variant="solid" colorScheme="blue">
+          {/* <Button variant="solid" colorScheme="blue">
             Update
-          </Button>
-          <Button variant="solid" colorScheme="blue">
+          </Button> */}
+          <Button variant="solid" colorScheme="blue" onClick={handleLogout}>
             Logout
           </Button>
-          <Button variant="solid" colorScheme="blue">
+          <Button
+            variant="solid"
+            colorScheme="blue"
+            onClick={() => handleDelete(user._id)}
+          >
             Delete Account
           </Button>
         </Flex>
