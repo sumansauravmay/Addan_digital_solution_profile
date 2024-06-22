@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Stack,
   Button,
@@ -9,43 +10,90 @@ import {
   Card,
   Divider,
   CardFooter,
-  Flex
+  Flex,
+  useToast,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+  const [user, setUser] = useState({});
+  console.log("user", user);
+  const toast = useToast();
+  const navigate = useNavigate();
+  const token = JSON.parse(localStorage.getItem("token")) || "";
+  console.log("token", token);
+
+  const getData = () => {
+    if (token) {
+      return axios
+        .get(`https://addan-digital-solution-profile-1.onrender.com/profile`, {
+          headers: { Authorization: `${token}` },
+        })
+        .then((res) => {
+          console.log("data", res.data);
+          setUser(res.data);
+        })
+        .catch((err) => {
+          console.log("err", err.response.data.message);
+          toast({
+            title: "Please Login First",
+            description: err.response.data.message,
+            status: "error",
+            duration: 9000,
+            position: "top",
+            isClosable: true,
+          });
+          navigate("/");
+        });
+    } else {
+      toast({
+        title: "Please Login First",
+        description: "Error",
+        status: "error",
+        duration: 9000,
+        position: "top",
+        isClosable: true,
+      });
+      navigate("/");
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <Card maxW="70%"
-    m="50px auto auto auto"
-    >
-      <CardBody>
+    <Card maxW="70%" m="50px auto auto auto">
+      <CardBody m="6px auto auto 300px">
         <Image
-          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+          w="50%"
+          src={user.photo}
           alt="Green double couch with wooden legs"
           borderRadius="lg"
         />
         <Stack mt="6" spacing="3">
-          <Heading size="md">Living room Sofa</Heading>
-          <Text>
-            This sofa is perfect for modern tropical spaces, baroque inspired
-            spaces, earthy toned spaces and for people who love a chic design
-            with a sprinkle of vintage design.
-          </Text>
-          <Text color="blue.600" fontSize="2xl">
-            $450
-          </Text>
+          <Heading size="xl">Name: {user.name}</Heading>
+          <Text fontSize="2xl">Email: {user.email}</Text>
+          <Text fontSize="2xl">Phone: {user.phone}</Text>
+
+          <Text fontSize="2xl">Education: {user.education}</Text>
+
+          <Text fontSize="2xl">Skill Sets: {user.skillSets}</Text>
+
+          <Text fontSize="2xl">Past Experience: {user.pastExperience}</Text>
         </Stack>
       </CardBody>
       <Divider />
       <CardFooter>
-        <Flex gap="5">
+        <Flex gap="5" ml="300px">
           <Button variant="solid" colorScheme="blue">
             Update
           </Button>
           <Button variant="solid" colorScheme="blue">
-            Delete
+            Logout
           </Button>
           <Button variant="solid" colorScheme="blue">
-            Logout
+            Delete Account
           </Button>
         </Flex>
       </CardFooter>
