@@ -1,11 +1,12 @@
-
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import AllRoutes from "./routes/AllRoutes";
 
 function App() {
   return (
-    <div className="App">
-     Adaan digital
-     
+    <div>
+      <Navbar/>
+      <AllRoutes />
     </div>
   );
 }
