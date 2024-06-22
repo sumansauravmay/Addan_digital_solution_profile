@@ -4,14 +4,13 @@ const { profileRouter } = require("./routes/profile.route");
 const { connnection } = require("./config/db");
 
 require("dotenv").config();
-
 const cors = require("cors");
 
 app = express();
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN || "*",
+    origin: "*",
   })
 );
 
@@ -19,7 +18,6 @@ app.use(express.json());
 
 app.use("/", userRouter);
 app.use("/", profileRouter);
-
 
 app.listen(process.env.port, async () => {
   try {
