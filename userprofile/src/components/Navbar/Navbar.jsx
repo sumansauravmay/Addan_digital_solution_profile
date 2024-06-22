@@ -2,7 +2,6 @@ import React from "react";
 import {
   Flex,
   Spacer,
-  Heading,
   ButtonGroup,
   Button,
   Box,
@@ -12,7 +11,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <Flex gap="2" mt={5} w={"70%"} ml={"250px"}>
+    <Flex gap="2" mt={5} w={"70%"} 
+    ml={"250px"}>
       <Box>
         <Link to="/">
           <GoHomeFill size="40px" />
