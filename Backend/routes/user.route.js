@@ -50,4 +50,16 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
+userRouter.delete("/user/delete/:id", async(req, res) => {
+  const ID=req.params.id;
+  try {
+    await UserModel.findByIdAndDelete({_id:ID})
+    res.send("Account Deleted!")
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ msg: "Can not be deleted" });
+  }
+});
+
 module.exports = { userRouter };
