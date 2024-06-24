@@ -148,7 +148,18 @@ const Register = () => {
           });
           navigate("/");
         })
-        .catch((err) => console.log(err));
+        .catch((err) =>{
+          console.log(err.response.data.msg)
+          toast({
+            title: "Please check phone number!",
+            description: err.response.data.msg,
+            status: "error",
+            position: "top",
+            duration: 4000,
+            isClosable: true,
+          });
+
+        });
     }
   };
 
