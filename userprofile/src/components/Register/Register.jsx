@@ -16,6 +16,10 @@ import { PhoneIcon, ViewIcon, EmailIcon } from "@chakra-ui/icons";
 import { BsChatText } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
+import { MdInsertPhoto } from "react-icons/md";
+import { GiSkills } from "react-icons/gi";
+import { AiFillExperiment } from "react-icons/ai";
+import { MdCastForEducation } from "react-icons/md";
 import axios from "axios";
 
 const Register = () => {
@@ -25,6 +29,10 @@ const Register = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
+  const [education, setEducation] = useState("");
+  const [skillSets, setSkillSets] = useState("");
+  const [photo, setPhoto] = useState("");
+  const [pastExperience, setPastExperience] = useState("");
 
   const [show, setShow] = React.useState(false);
   const [show2, setShow2] = React.useState(false);
@@ -39,6 +47,10 @@ const Register = () => {
     name: name,
     password: password,
     repassword: repassword,
+    pastExperience: pastExperience,
+    skillSets: skillSets,
+    photo: photo,
+    education: education,
   };
 
   const handleSubmit = () => {
@@ -84,11 +96,10 @@ const Register = () => {
             duration: 9000,
             isClosable: true,
           });
-          navigate("/")
+          navigate("/");
         })
-        .catch((err)=>console.log(err))
+        .catch((err) => console.log(err));
     }
-    
   };
 
   return (
@@ -177,6 +188,62 @@ const Register = () => {
               {show2 ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
+        </InputGroup>
+
+        <Text fontSize="xl" fontWeight={"bold"}>
+          Below fields are not mandatory
+        </Text>
+
+        <InputGroup>
+          <InputLeftElement pointerEvents="none">
+            <MdInsertPhoto color="black.300" />
+          </InputLeftElement>
+          <Input
+            className={styles.input}
+            value={photo}
+            onChange={(e) => setPhoto(e.target.value)}
+            type="text"
+            placeholder="Photo"
+          />
+        </InputGroup>
+
+        <InputGroup>
+          <InputLeftElement pointerEvents="none">
+            <MdCastForEducation color="black.300" />
+          </InputLeftElement>
+          <Input
+            className={styles.input}
+            value={education}
+            onChange={(e) => setEducation(e.target.value)}
+            type="text"
+            placeholder="Education"
+          />
+        </InputGroup>
+
+        <InputGroup>
+          <InputLeftElement pointerEvents="none">
+            <GiSkills color="black.300" />
+          </InputLeftElement>
+          <Input
+            className={styles.input}
+            value={skillSets}
+            onChange={(e) => setSkillSets(e.target.value)}
+            type="text"
+            placeholder="Skills"
+          />
+        </InputGroup>
+
+        <InputGroup>
+          <InputLeftElement pointerEvents="none">
+            <AiFillExperiment color="black.300" />
+          </InputLeftElement>
+          <Input
+            className={styles.input}
+            value={pastExperience}
+            onChange={(e) => setPastExperience(e.target.value)}
+            type="text"
+            placeholder="Experience"
+          />
         </InputGroup>
 
         <Button
