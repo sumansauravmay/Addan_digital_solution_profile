@@ -31,7 +31,9 @@ const Register = () => {
   const [repassword, setRepassword] = useState("");
   const [education, setEducation] = useState("NA");
   const [skillSets, setSkillSets] = useState("NA");
-  const [photo, setPhoto] = useState("https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  const [photo, setPhoto] = useState(
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  );
   const [pastExperience, setPastExperience] = useState("NA");
 
   const [show, setShow] = React.useState(false);
@@ -110,7 +112,7 @@ const Register = () => {
         duration: 4000,
         isClosable: true,
       });
-    }else if (phone.length < 10 || phone.length > 10) {
+    } else if (phone.length < 10 || phone.length > 10) {
       toast({
         position: "top",
         title: "Phone number is wrong!",
@@ -128,8 +130,7 @@ const Register = () => {
         duration: 4000,
         isClosable: true,
       });
-    } 
-    else {
+    } else {
       axios
         .post(
           `https://addan-digital-solution-profile-1.onrender.com/register`,
