@@ -1,9 +1,9 @@
 
 
 
-1. # Node.js with Express.js Application for the Backend
+1. ## Node.js with Express.js Application for the Backend
 
-## Description:
+### Description:
 
 This is an Express.js application with routes for user and profile management, connected to a database.
 
@@ -56,10 +56,26 @@ Make sure you have the following installed:
 
 # Usage
 
+1. Start the server:
 ```bash
    npm start
 ```
 
+2. Project Structure
+
+```bash
+.
+├── config
+│   └── db.js          # Database connection configuration
+├── routes
+│   ├── user.route.js  # User routes
+│   └── profile.route.js # Profile routes
+├── .env               # Environment variables
+├── .gitignore         # Git ignore file
+├── package.json       # npm package file
+├── package-lock.json  # npm lock file
+└── server.js          # Main server file
+```
 
 
 # Backend Deployement
