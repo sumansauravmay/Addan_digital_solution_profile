@@ -150,12 +150,23 @@ To run this project locally, follow these steps:
 ````base
 https://github.com/sumansauravmay/Addan_digital_solution_profile.git
 ````
+2. Navigate to the project directory:
 
+ ````base
+cd userprofile
+````
+3. Install the dependencies:
 
+````base
+npm install
+````
+4. Start the development server:
 
+````base
+npm start
+````
 
-
-# Netlify Deployement
+# Frontend Deployement
 
 ```bash
 https://zippy-capybara-90a739.netlify.app/
