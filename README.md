@@ -1,6 +1,13 @@
 
 # Addan Digital Soulution Assignment
 
+
+### Video Link
+
+[https://drive.google.com/file/d/1MW7CJ1tigjoC9OrSJvDtChtMvtqr-nC4/view](https://drive.google.com/file/d/1MW7CJ1tigjoC9OrSJvDtChtMvtqr-nC4/view)
+
+
+
 ## 1. Backend
 
 ### Description:
@@ -119,6 +126,11 @@ This README file gives a clear overview of your project, including how to set it
 
 
 ## 2. Frontend
+
+### Netlify Link
+
+[https://ornate-cat-4c0005.netlify.app/](https://ornate-cat-4c0005.netlify.app/)
+
 
 Welcome to the frontend project of the userprofile application. This project is hosted on Netlify and can be accessed <a href="https://ornate-cat-4c0005.netlify.app/">here</a>.
 
