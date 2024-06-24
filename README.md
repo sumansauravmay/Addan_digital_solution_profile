@@ -101,6 +101,15 @@ Make sure you have the following installed:
 5. Create a new Pull Request
 ````
 
+
+# Backend Deployement
+
+```bash
+https://addan-digital-solution-profile-1.onrender.com
+```
+
+
+
 ````base
 This README file gives a clear overview of your project, including how to set it up, run it, and contribute to it.
 ````
@@ -108,12 +117,6 @@ This README file gives a clear overview of your project, including how to set it
 
 
 2. ## React Application for the Frontend
-
-# Backend Deployement
-
-```bash
-https://addan-digital-solution-profile-1.onrender.com
-```
 
 # Netlify Deployement
 
