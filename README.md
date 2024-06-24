@@ -1,5 +1,3 @@
-# Addan_digital_solution_profile
-
 # Node.js with Express.js Application for the Backend
 
 # Description:
@@ -34,8 +32,32 @@ Make sure you have the following installed:
 
    ```
 
-2. Navigate to the project directory:  
+2. Navigate to the project directory:
+
+```bash
    cd your-repo-name
+```
+
+3. Install the dependencies:
+
+```bash
+   npm install
+```
+
+4. Create a `.env` file in the root of the project and add the following variables:
+
+```bash
+   PORT=3000
+   mongoURL=your-database-connection-string
+```
+
+# Usage
+
+```bash
+   npm start
+```
+
+
 
 # Backend Deployement
 
@@ -47,4 +69,4 @@ https://addan-digital-solution-profile-1.onrender.com
 
 ```bash
 https://zippy-capybara-90a739.netlify.app/
-
+```
