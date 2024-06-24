@@ -29,10 +29,10 @@ const Register = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
-  const [education, setEducation] = useState("");
-  const [skillSets, setSkillSets] = useState("");
-  const [photo, setPhoto] = useState("");
-  const [pastExperience, setPastExperience] = useState("");
+  const [education, setEducation] = useState("NA");
+  const [skillSets, setSkillSets] = useState("NA");
+  const [photo, setPhoto] = useState("https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  const [pastExperience, setPastExperience] = useState("NA");
 
   const [show, setShow] = React.useState(false);
   const [show2, setShow2] = React.useState(false);
@@ -55,6 +55,7 @@ const Register = () => {
 
   const handleSubmit = () => {
     // e.preventDefault();
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
     if (
       phone === "" ||
@@ -67,20 +68,68 @@ const Register = () => {
         title: "Registration Failed!",
         description: "One or more input field is empty!",
         status: "error",
-        duration: 9000,
+        duration: 4000,
         position: "top",
         isClosable: true,
       });
     } else if (password !== repassword) {
       toast({
         title: "Registration Failed!",
-        description: "Password doesn't match",
+        description: "Password doesn't match!",
         status: "error",
-        duration: 9000,
+        duration: 4000,
         position: "top",
         isClosable: true,
       });
-    } else {
+    } else if (
+      name.includes(0) ||
+      name.includes(1) ||
+      name.includes(2) ||
+      name.includes(3) ||
+      name.includes(4) ||
+      name.includes(5) ||
+      name.includes(6) ||
+      name.includes(7) ||
+      name.includes(8) ||
+      name.includes(9)
+    ) {
+      toast({
+        position: "top",
+        title: "Name is wrong!",
+        description: "Please put only ALPHABETICAL!",
+        status: "warning",
+        duration: 4000,
+        isClosable: true,
+      });
+    } else if (!regex.test(email)) {
+      toast({
+        position: "top",
+        title: "E-mail is wrong!",
+        description: "Please check the E-mail!",
+        status: "info",
+        duration: 4000,
+        isClosable: true,
+      });
+    }else if (phone.length < 10 || phone.length > 10) {
+      toast({
+        position: "top",
+        title: "Phone number is wrong!",
+        description: "Please check the phone number!",
+        status: "warning",
+        duration: 4000,
+        isClosable: true,
+      });
+    } else if (password.length < 8) {
+      toast({
+        position: "top",
+        title: "Password warning!",
+        description: "Password should be more than 8 letters!",
+        status: "warning",
+        duration: 4000,
+        isClosable: true,
+      });
+    } 
+    else {
       axios
         .post(
           `https://addan-digital-solution-profile-1.onrender.com/register`,
@@ -93,7 +142,7 @@ const Register = () => {
             description: "Please Login",
             status: "success",
             position: "top",
-            duration: 9000,
+            duration: 4000,
             isClosable: true,
           });
           navigate("/");
