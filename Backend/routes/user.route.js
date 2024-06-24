@@ -10,6 +10,13 @@ const jwt = require("jsonwebtoken");
 userRouter.post("/register", async (req, res) => {
   const payload = req.body;
   try {
+    phone=payload.phone;
+    let userphone = UserModel.findOne({ phone });
+
+    if (userphone) {
+      return res.status(401).send({ msg: "Phone Number already exists!" });
+    }
+
     const salt = await bcrypt.genSalt(10);
     const hashedPass = await bcrypt.hash(payload.password, salt);
     payload.password = hashedPass;
@@ -50,12 +57,11 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
-userRouter.delete("/user/delete/:id", async(req, res) => {
-  const ID=req.params.id;
+userRouter.delete("/user/delete/:id", async (req, res) => {
+  const ID = req.params.id;
   try {
-    await UserModel.findByIdAndDelete({_id:ID})
-    res.send("Account Deleted!")
-
+    await UserModel.findByIdAndDelete({ _id: ID });
+    res.send("Account Deleted!");
   } catch (err) {
     console.log(err);
     res.status(500).send({ msg: "Can not be deleted" });
