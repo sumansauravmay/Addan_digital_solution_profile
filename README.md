@@ -9,24 +9,24 @@ This is an Express.js application with routes for user and profile management, c
 
 <hr/>
 
-## Features
+### Features
 
 - User routes
 - Profile routes
 - Database connection
 - Environment configuration
 - CORS support
-- ENV
+- DOTENV
 - JSON request parsing
 
-## Prerequisites
+### Prerequisites
 
 Make sure you have the following installed:
 
 - Node.js
 - npm (Node Package Manager)
 
-## Getting Started
+### Getting Started
 
 1. **Clone the repository:**
 
@@ -54,7 +54,7 @@ Make sure you have the following installed:
    mongoURL=your-database-connection-string
 ```
 
-# Usage
+### Usage
 
 1. Start the server:
 ```bash
@@ -66,17 +66,39 @@ Make sure you have the following installed:
 ```bash
 .
 ├── config
-│   └── db.js          # Database connection configuration
+│   └── db.js # Database connection configuration
+├── models
+|     └── user.model.js # Schema for the User
+├── middlewares
+|     └── user.middlewares.js     # Toekn and Authorisation
+│                      
 ├── routes
 │   ├── user.route.js  # User routes
 │   └── profile.route.js # Profile routes
 ├── .env               # Environment variables
 ├── .gitignore         # Git ignore file
 ├── package.json       # npm package file
-├── package-lock.json  # npm lock file
-└── server.js          # Main server file
+└── index.js.js          # Main server file
+```
+3. Dependencies
+
+```bash
+  Express
+  mongoose
+  nodemon
+  jsonwebtoken
+  bcrypt
+  dotenv
+  cors
 ```
 
+
+
+
+
+
+
+2. ## React Application for the Frontend
 
 # Backend Deployement
 
