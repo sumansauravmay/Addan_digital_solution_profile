@@ -166,8 +166,38 @@ npm install
 npm start
 ````
 
-# Frontend Deployement
+### Usage
+
+To use the application:
+````base
+    Open your web browser.
+    Navigate to https://ornate-cat-4c0005.netlify.app/.
+    Interact with the various features of the application.
+````
+### Contributing
+
+Contributions are welcome! To contribute to this project, follow these steps:
+
+1. Fork the repository
+2. Create a new branch (git branch branchName)
+3. Go to your branch (git checkout branchName)
+4. Make the changes
+ Push in the github
+5. git add .
+3. Commit your changes (git commit -m 'Add some feature')
+4. Push to the branch (git push origin feature-branch)
+5. Create a new Pull Request
+
+
+
+## Frontend Deployement
 
 ```bash
 https://zippy-capybara-90a739.netlify.app/
 ```
+### Contact
+
+If you have any questions or suggestions, feel free to reach out:
+
+    Email: sumansauravmay@example.com
+    GitHub: https://github.com/sumansauravmay
