@@ -6,6 +6,7 @@
 # Description:
 This is an Express.js application with routes for user and profile management, connected to a database.
 
+<hr/>
 
 ## Features
 
