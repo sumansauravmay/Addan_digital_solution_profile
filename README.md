@@ -31,14 +31,14 @@ Make sure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/sumansauravmay/Addan_digital_solution_profile.git
 
    ```
 
 2. Navigate to the project directory:
 
 ```bash
-   cd your-repo-name
+   cd Backend
 ```
 
 3. Install the dependencies:
@@ -66,19 +66,19 @@ Make sure you have the following installed:
 ```bash
 .
 ├── config
-│   └── db.js # Database connection configuration
+│   └── db.js 
 ├── models
-|     └── user.model.js # Schema for the User
+|     └── user.model.js 
 ├── middlewares
-|     └── user.middlewares.js     # Toekn and Authorisation
+|     └── user.middlewares.js  
 │                      
 ├── routes
-│   ├── user.route.js  # User routes
-│   └── profile.route.js # Profile routes
-├── .env               # Environment variables
-├── .gitignore         # Git ignore file
-├── package.json       # npm package file
-└── index.js.js          # Main server file
+│   ├── user.route.js  
+│   └── profile.route.js 
+├── .env              
+├── .gitignore         
+├── package.json       
+└── index.js.js          
 ```
 3. Dependencies
 
@@ -92,9 +92,18 @@ Make sure you have the following installed:
   cors
 ```
 
+### Contributing
+```base
+1. Fork the repository
+2. Create a new branch (git checkout -b feature-branch)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin feature-branch)
+5. Create a new Pull Request
+````
 
-
-
+````base
+This README file gives a clear overview of your project, including how to set it up, run it, and contribute to it.
+````
 
 
 
