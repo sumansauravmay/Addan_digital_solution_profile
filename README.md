@@ -93,16 +93,18 @@ Make sure you have the following installed:
 ```
 
 ### Contributing
+
 ```base
 1. Fork the repository
 2. Create a new branch (git checkout -b feature-branch)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin feature-branch)
 5. Create a new Pull Request
+
 ````
 
 
-# Backend Deployement
+### Backend Deployement
 
 ```bash
 https://addan-digital-solution-profile-1.onrender.com
@@ -116,7 +118,7 @@ This README file gives a clear overview of your project, including how to set it
 
 
 
-2. ## Frontend
+## 2. Frontend
 
 Welcome to the frontend project of the userprofile application. This project is hosted on Netlify and can be accessed <a href="https://ornate-cat-4c0005.netlify.app/">here</a>.
 
