@@ -118,6 +118,41 @@ This README file gives a clear overview of your project, including how to set it
 
 2. ## Frontend
 
+Welcome to the frontend project of the userprofile application. This project is hosted on Netlify and can be accessed <a href="https://ornate-cat-4c0005.netlify.app/">here</a>.
+
+
+### Description:
+This project is the frontend component of the userprofile application. It provides a user-friendly interface for interacting with the application. The application is designed to be responsive, intuitive, and visually appealing.
+
+### Features
+
+Responsive Design: The application is fully responsive and works seamlessly on all devices.
+User Authentication: Secure user authentication and authorization.
+Interactive UI: Smooth and interactive user interface.
+API Integration: Connects to backend services to fetch and display data.
+
+### Technologies Used
+
+- HTML5: For structuring the web content.
+- CSS3: For styling the web content.
+- JavaScript: For adding interactivity to the web content.
+-  React: JavaScript library for building user interfaces.
+- Netlify: Hosting platform for deploying the frontend.
+
+### Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+
+````base
+https://github.com/sumansauravmay/Addan_digital_solution_profile.git
+````
+
+
+
+
+
 # Netlify Deployement
 
 ```bash
