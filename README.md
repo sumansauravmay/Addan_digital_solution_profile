@@ -116,7 +116,7 @@ This README file gives a clear overview of your project, including how to set it
 
 
 
-2. ## React Application for the Frontend
+2. ## Frontend
 
 # Netlify Deployement
 
