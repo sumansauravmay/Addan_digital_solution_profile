@@ -9,12 +9,13 @@ const jwt = require("jsonwebtoken");
 
 userRouter.post("/register", async (req, res) => {
   const payload = req.body;
-  try {
-    phone=payload.phone;
-    let userphone = UserModel.findOne({ phone });
 
+  try {
+    phone = payload.phone;
+
+    let userphone =await UserModel.findOne({ phone });
     if (userphone) {
-      return res.status(401).send({ msg: "Phone Number already exists!" });
+      return res.status(401).send({ msg: "Phone!" });
     }
 
     const salt = await bcrypt.genSalt(10);
